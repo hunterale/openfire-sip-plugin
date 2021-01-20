@@ -21,6 +21,7 @@
         %>
 <%@ page import="org.jivesoftware.openfire.sip.sipaccount.SipAccountDAO" %>
 <%@ page import="org.jivesoftware.openfire.sip.sipaccount.SipAccount" %>
+<%@ page import="org.jivesoftware.openfire.util.StringUtils" %>
 <%@ page import="java.util.Collection" %>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -224,7 +225,7 @@
                     <%=user.getStatus().name()%>
                 </td>
                 <td width="20%">
-                    <a href="./../../user-properties.jsp?username=<%= URLEncoder.encode(user.getUsername(), "UTF-8") %>"><%= user.getUsername() %>
+                    <a href="./../../user-properties.jsp?username=<%= URLEncoder.encode(user.getUsername(), "UTF-8") %>"><%= StringUtils.escapeHTMLTags(user.getUsername()) %>
                     </a>
                 </td>
                 <td width="20%">
